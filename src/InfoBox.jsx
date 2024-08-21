@@ -3,6 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import "./InfoBox.css";
 export default function InfoBox({info}){
     // const imgAdd="https://static.vecteezy.com/system/resources/previews/000/830/977/original/weather-icon-set-vector.jpg";
@@ -22,7 +25,7 @@ export default function InfoBox({info}){
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {info.city}
+          {info.city}{info.humidity>80?<ThunderstormIcon/>:info.temp>15?<WbSunnyIcon/>:<AcUnitIcon/>}  
         </Typography>
         <Typography variant="body2" color="text.secondary">
           <p>
